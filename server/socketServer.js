@@ -1,7 +1,7 @@
 const http = require("http");
 const { Server } = require("socket.io");
 
-const PORT = process.env.SOCKET_PORT || 3001;
+const PORT = process.env.PORT || process.env.SOCKET_PORT || 3001;
 
 const server = http.createServer((req, res) => {
   if (req.url === "/health") {
@@ -72,3 +72,4 @@ server.listen(PORT, () => {
   console.log(`   Real-time events: case:create, fir:register, evidence:upload, ai:step`);
   console.log(`=======================================================`);
 });
+
